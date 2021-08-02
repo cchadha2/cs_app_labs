@@ -180,8 +180,7 @@ int isTmax(int x) {
  *   Rating: 2
  */
 int allOddBits(int x) {
-    /*return !((x >> 1) & x);*/
-    return x >> 
+    return !(~(x | (0x55 + (0x55 << 8) + (0x55 << 16) + (0x55 << 24))));
 }
 /* 
  * negate - return -x 
@@ -191,7 +190,7 @@ int allOddBits(int x) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+    return ~x + 1;
 }
 //3
 /* 
